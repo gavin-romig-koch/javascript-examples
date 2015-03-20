@@ -1,0 +1,5 @@
+https://github.com/mattbierner/bennu/
+
+Bennu is a Javascript parser combinator library based on Parsec.
+
+Parser combinators allow complex parsers to be created from a set of simple building blocks. Compared to other parsing techniques, combinatorial parsers can be written more quickly and integrate better with the host language.

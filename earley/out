@@ -1,0 +1,117 @@
+adding S <- A
+addNonTerminal S undefined
+actual S [object Object]
+rightNames[0] = string A
+adding nonTerminal
+addNonTerminal A undefined
+actual A [object Object]
+actual S <- A 
+actual S <- A 
+adding S <- B,C
+addNonTerminal S [object Object]
+actual S [object Object]
+rightNames[0] = string B
+adding nonTerminal
+addNonTerminal B undefined
+actual B [object Object]
+rightNames[1] = string C
+adding nonTerminal
+addNonTerminal C undefined
+actual C [object Object]
+actual S <- B C 
+actual S <- B C 
+adding A <- 'a','a'
+addNonTerminal A [object Object]
+actual A [object Object]
+rightNames[0] = string 'a'
+adding character code
+rightNames[1] = string 'a'
+adding character code
+actual A <- 'a' 'a' 
+actual A <- 'a' 'a' 
+adding B <- 'a'
+addNonTerminal B [object Object]
+actual B [object Object]
+rightNames[0] = string 'a'
+adding character code
+actual B <- 'a' 
+actual B <- 'a' 
+adding C <- 'a'
+addNonTerminal C [object Object]
+actual C [object Object]
+rightNames[0] = string 'a'
+adding character code
+actual C <- 'a' 
+actual C <- 'a' 
+adding _ <- S
+addNonTerminal _ undefined
+actual _ [object Object]
+rightNames[0] = string S
+adding nonTerminal
+addNonTerminal S [object Object]
+actual S [object Object]
+actual _ <- S 
+actual _ <- S 
+---Run--
+final state: { _ <- S . , 0-2 }
+{ A <- 'a' . 'a' , 0-1 }
+    X  (,)
+    0 'a'
+{ A <- 'a' 'a' . , 0-2 }
+    X  ({ A <- 'a' . 'a' , 0-1 },)
+    0 'a' 'a'
+{ S <- A . , 0-2 }
+    X  (,{ A <- 'a' 'a' . , 0-2 })
+    0 A ( 'a' 'a' )
+{ B <- 'a' . , 0-1 }
+    X  (,)
+    0 'a'
+{ S <- B . C , 0-1 }
+    X  (,{ B <- 'a' . , 0-1 })
+    0 B ( 'a' )
+{ C <- 'a' . , 1-2 }
+    X  (,)
+    0 'a'
+{ S <- B C . , 0-2 }
+    X  ({ S <- B . C , 0-1 },{ C <- 'a' . , 1-2 })
+    0 B ( 'a' ) C ( 'a' )
+{ _ <- S . , 0-2 }
+    X  (,{ S <- A . , 0-2 }{ S <- B C . , 0-2 })
+    0 S ( A ( 'a' 'a' ) ) ( B ( 'a' ) C ( 'a' ) )
+final tree:  S ( A ( 'a' 'a' ) ) ( B ( 'a' ) C ( 'a' ) ) ;
+about to build
+entering build
+non-terminal at position 0 0-2
+  0 :[object Object],[object Object]
+entering build
+non-terminal at position 0 0-2
+  0 :[object Object]
+entering build
+terminal at position > 0 { A <- 'a' 'a' . , 0-2 }
+  1 [object Object]:
+entering build
+terminal at position 0
+entering build
+non-terminal at position > 0 0-2
+  1 [object Object]:[object Object]
+entering build
+terminal at position 0
+entering build
+non-terminal at position 0 0-1
+  0 :[object Object]
+entering build
+terminal at position 0
+about to print
+entering SPPF_to_string undefined
+entering SPPF_to_string undefined
+entering SPPF_to_string undefined
+entering SPPF_to_string undefined
+entering SPPF_to_string undefined
+entering SPPF_to_string undefined
+entering SPPF_to_string undefined
+entering SPPF_to_string undefined
+entering SPPF_to_string 5
+entering SPPF_to_string undefined
+entering SPPF_to_string 6
+ ( ( [ ( {'a' 0-1 }:5 ), {A <- 'a' 'a'  0-1 }:4 ] ( {'a' 1-2 }:6 ), {A 0-2 }:3 ), [ ( ( :5 ), {B 0-1 }:8 ), {S <- B C  1-1 }:7 ] ( ( :6 ), {C 1-2 }:9 ), {S 0-2 }:2 ), {_ 0-2 }:1
+parse of 'aa' into 'S': true
